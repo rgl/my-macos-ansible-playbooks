@@ -1,0 +1,25 @@
+# see https://brew.sh
+# see https://docs.brew.sh/Analytics
+# see https://docs.brew.sh/Installation
+# see https://github.com/Homebrew/install/#install-homebrew-on-macos-or-linux
+
+- name: Install homebrew
+  block:
+    - name: Check homebrew installed
+      ansible.builtin.stat:
+        path: /usr/local/bin/brew
+      register: homebrew_check
+    - name: Install homebrew
+      ansible.builtin.shell:
+        cmd: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      when: not homebrew_check.stat.exists
+      changed_when: not homebrew_check.stat.exists
+
+- name: Upgrade homebrew
+  community.general.homebrew:
+    update_homebrew: true
+
+- name: Upgrade homebrew packages
+  community.general.homebrew:
+    upgrade_all: true

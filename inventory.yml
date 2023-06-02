@@ -1,0 +1,11 @@
+all:
+  hosts:
+    vm:
+      ansible_host: 127.0.0.1
+      ansible_port: 2222
+  vars:
+    # connection configuration.
+    # see https://docs.ansible.com/ansible-core/2.14/collections/ansible/builtin/ssh_connection.html
+    ansible_user: admin
+    ansible_password: admin
+    ansible_sudo_pass: '{{ ansible_password }}'

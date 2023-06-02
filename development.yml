@@ -1,0 +1,7 @@
+- name: Development
+  hosts:
+    - all
+  gather_facts: true
+  become: false
+  roles:
+    - homebrew
