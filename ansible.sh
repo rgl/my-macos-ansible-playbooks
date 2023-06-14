@@ -25,6 +25,7 @@ EOF
 exec docker run \
     --rm \
     --net=host \
+    -v "$HOME/.ssh:/root/.ssh:ro" \
     -v "$PWD:/project:ro" \
     -e GITHUB_ACTIONS \
     -e GITHUB_WORKFLOW \

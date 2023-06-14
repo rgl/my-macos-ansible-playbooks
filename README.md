@@ -86,6 +86,14 @@ chmod -w /etc/sudoers
 exit
 ```
 
+Configure ssh to accept the ansible controller user ssh public key:
+
+```bash
+install -d -m 700 .ssh
+install -m 600 /dev/null .ssh/authorized_keys
+vim .ssh/authorized_keys
+```
+
 Exit the Terminal application:
 
 ```bash

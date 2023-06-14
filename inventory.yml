@@ -3,6 +3,16 @@ all:
     vm:
       ansible_host: 127.0.0.1
       ansible_port: 2222
+      # NB to use a jump server:
+      #     1. add the ansible controller machine user ssh public key to the
+      #        $ansible_host .ssh/authorized_keys file.
+      #     2. uncomment the ansible_ssh_common_args and ansible_ssh_password
+      #        lines bellow.
+      #     3. set them with the $jump_server user, address, and password.
+      # NB this is equivalent of executing:
+      #     ssh -J <jump_server_user>@<jump_server_address> $ansible_user@$ansible_host -p $ansible_port
+      #ansible_ssh_common_args: -J <jump_server_user>@<jump_server_address>
+      #ansible_ssh_password: <jump_server_password>
   vars:
     # connection configuration.
     # see https://docs.ansible.com/ansible-core/2.15/collections/ansible/builtin/ssh_connection.html
