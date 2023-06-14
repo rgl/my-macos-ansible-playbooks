@@ -9,5 +9,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build the ansible execution environment
         run: ./ansible-lint.sh --version
+      - name: Lint the information.yml playbook
+        run: ./ansible-lint.sh --offline --parseable information.yml
       - name: Lint the development.yml playbook
         run: ./ansible-lint.sh --offline --parseable development.yml

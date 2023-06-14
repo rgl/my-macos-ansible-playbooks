@@ -30,6 +30,12 @@ Run an ad-hoc command in the `vm` machine:
 ./ansible.sh vm -a 'id'
 ```
 
+Run the `information.yml` playbook against the `vm` machine:
+
+```bash
+./ansible-playbook.sh --limit=vm information.yml -v
+```
+
 Lint the `development.yml` playbook:
 
 ```bash
