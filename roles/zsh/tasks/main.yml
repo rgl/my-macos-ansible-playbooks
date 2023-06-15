@@ -1,0 +1,5 @@
+- name: Install .zprofile
+  ansible.builtin.copy:
+    src: zprofile
+    dest: ~/.zprofile
+    mode: '0400'

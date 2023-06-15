@@ -5,3 +5,4 @@
   become: false
   roles:
     - homebrew
+    - zsh

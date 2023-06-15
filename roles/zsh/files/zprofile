@@ -1,0 +1,25 @@
+# locale.
+export LANG=en_US.UTF-8
+
+# homebrew.
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    #export HOMEBREW_NO_AUTO_UPDATE=1
+    #export HOMEBREW_NO_INSTALL_CLEANUP=1
+fi
+
+# alias.
+alias l='ls -lF --color'
+alias ll='l -a'
+alias h='history 25'
+alias j='jobs -l'
+
+# key bindings.
+# NB use bindkey to list the active key bindings.
+# NB use cat and type a key to see its ansi code.
+bindkey '^[[A' history-beginning-search-backward # up arrow.
+bindkey '^[[B' history-beginning-search-forward  # down arrow.
+bindkey '^[[H' beginning-of-line                 # home.
+bindkey '^[[F' end-of-line                       # end.
+bindkey '^[[1;5D' backward-word                  # ctrl + left arrow.
+bindkey '^[[1;5C' forward-word                   # ctrl + right arrow.
