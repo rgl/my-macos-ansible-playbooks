@@ -7,7 +7,7 @@
   block:
     - name: Check homebrew installed
       ansible.builtin.stat:
-        path: /usr/local/bin/brew
+        path: /opt/homebrew/bin/brew
       register: homebrew_check
     - name: Install homebrew
       ansible.builtin.shell:
