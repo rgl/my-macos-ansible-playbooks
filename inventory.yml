@@ -9,6 +9,8 @@ all:
       #     2. uncomment the ansible_ssh_common_args and ansible_ssh_password
       #        lines bellow.
       #     3. set them with the $jump_server user, address, and password.
+      #        **NB** you can specify multiple jump servers in the -J argument
+      #               by separating them with a comma character.
       # NB this is equivalent of executing:
       #     ssh -J <jump_server_user>@<jump_server_address> $ansible_user@$ansible_host -p $ansible_port
       #ansible_ssh_common_args: -J <jump_server_user>@<jump_server_address>
