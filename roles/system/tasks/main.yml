@@ -15,3 +15,11 @@
     key: loginWindowIdleTime
     type: integer
     value: 0
+
+- name: Disable the desktop screen saver
+  community.general.osx_defaults:
+    host: currentHost
+    domain: com.apple.screensaver
+    key: idleTime
+    type: integer
+    value: 0
