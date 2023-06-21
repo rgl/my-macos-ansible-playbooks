@@ -7,3 +7,11 @@
     ARG_COMPUTER_SLEEP: Never
   register: system_result
   changed_when: "'ANSIBLE CHANGED NO' not in system_result.stdout_lines"
+
+- name: Disable the login screen saver
+  become: true
+  community.general.osx_defaults:
+    domain: /Library/Preferences/com.apple.screensaver
+    key: loginWindowIdleTime
+    type: integer
+    value: 0
