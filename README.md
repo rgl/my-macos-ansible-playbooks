@@ -48,6 +48,9 @@ Run the `development.yml` playbook against the `vm` machine:
 ./ansible-playbook.sh --limit=vm development.yml
 ```
 
+Follow the [macOS Automation section](#macos-automation) to manually grant the
+required permissions at the macOS desktop.
+
 List this repository dependencies (and which have newer versions):
 
 ```bash
@@ -100,3 +103,22 @@ Exit the Terminal application:
 ```bash
 exit
 ```
+
+# macOS Automation
+
+Automation is severely restricted by the following macOS security features:
+
+* [Application permissions](https://support.apple.com/guide/mac-help/change-privacy-security-settings-on-mac-mchl211c911f/13.0/mac/13.0): Prevents controlling other applications and macOS itself.
+* [Gatekeeper](https://en.wikipedia.org/wiki/Gatekeeper_(macOS)): Prevents non-signed and non-allowed applications from running.
+
+You must manually allow the following applications to have the following permissions:
+
+* `sshd-keygen-wrapper`
+  * `Files and Folders` > `Full Disk Access`
+  * `Full Disk Access`
+  * `Automation` > `System Events`
+  * `Accessability`
+
+For requesting those permissions, you have to keep executing the playbook, until it reports no changes.
+
+While executing the playbook, you have to manually grant the asked permissions at the macOS desktop.

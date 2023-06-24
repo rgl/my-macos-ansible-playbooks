@@ -2,3 +2,16 @@
 - name: Install Firefox
   community.general.homebrew_cask:
     name: firefox
+
+- name: Set Firefox as the default browser
+  block:
+    # see https://formulae.brew.sh/formula/defbro
+    - name: Install defbro
+      community.general.homebrew:
+        name: jwbargsten/misc/defbro
+    - name: Set Firefox as the default browser
+      ansible.builtin.command:
+        cmd: /bin/bash /dev/stdin org.mozilla.firefox
+        stdin: "{{ lookup('file', 'set-default-browser.sh') }}"
+      register: desktop_result
+      changed_when: "'ANSIBLE CHANGED NO' not in desktop_result.stdout_lines"
