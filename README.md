@@ -61,7 +61,8 @@ Create an account named `admin` with administrative privileges.
 
 Login as the `admin` user in the macOS desktop.
 
-Open the System Settings application, search for `Remote Login`, and enable it.
+Open the `System Settings` application, select `General`, select `Sharing`,
+select `Remote Login`, and enable it.
 
 Click the `i` icon besides the `Remote Login` toggle, and enable
 `Allow full disk access for remote users`.
