@@ -1,0 +1,4 @@
+# see https://formulae.brew.sh/cask/firefox
+- name: Install Firefox
+  community.general.homebrew_cask:
+    name: firefox

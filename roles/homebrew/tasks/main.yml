@@ -23,3 +23,10 @@
 - name: Upgrade homebrew packages
   community.general.homebrew:
     upgrade_all: true
+
+- name: Upgrade homebrew casks
+  # NB this always reports changes.
+  #    see https://github.com/ansible-collections/community.general/issues/1647
+  community.general.homebrew_cask:
+    upgrade_all: true
+    greedy: true
