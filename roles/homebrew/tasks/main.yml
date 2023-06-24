@@ -7,7 +7,7 @@
   block:
     - name: Check homebrew installed
       ansible.builtin.stat:
-        path: /opt/homebrew/bin/brew
+        path: "{{ (ansible_architecture == 'x86_64') | ternary('/usr/local/bin/brew', '/opt/homebrew/bin/brew') }}"
       register: homebrew_check
     - name: Install homebrew
       ansible.builtin.shell:
