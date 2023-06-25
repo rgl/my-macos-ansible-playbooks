@@ -4,6 +4,8 @@
 
 This is My macOS Ansible Playbooks Playground.
 
+Please note that although we can try to use Ansible to ad-hoc manage a device, the official way to remotely manage a device is through a 3rd-party [Mobile Device Management (MDM)](https://en.wikipedia.org/wiki/Mobile_device_management) service (some are listed in the [Alternatives section](#alternatives)). Also bear in mind that some management features might only be available through MDM.
+
 # Disclaimer
 
 * These playbooks might work only when you start from scratch, in a machine that only has a minimal installation.
@@ -130,3 +132,24 @@ While executing the playbook, you have to manually grant the asked permissions a
 * [Harvey's Virtual Environment](https://hsve.org/).
   * [Proxmox 1-Click Templates](https://hsve.org/hackeasyway/).
   * [How to enable pci (gpu-usb-audio) passthrough](https://hsve.org/passthrough/).
+
+# Alternatives
+
+* Apple Mobile Device Management (MDM).
+  * [MicroMDM](https://github.com/micromdm/micromdm).
+  * [NanoMDM](https://github.com/micromdm/nanomdm).
+  * [Commandment](https://github.com/cmdmnt/commandment).
+  * [ProfileCreator](https://github.com/ProfileCreator/ProfileCreator)
+  * [mosyle](https://mosyle.com).
+* [Munki](https://github.com/munki/munki).
+
+# References
+
+* [A deep dive into macOS Transparency, Consent, and Control (TCC) TCC.db](https://www.rainforestqa.com/blog/macos-tcc-db-deep-dive).
+* [Mobile Device Management (MDM)](https://en.wikipedia.org/wiki/Mobile_device_management).
+  * [Device Management](https://developer.apple.com/documentation/devicemanagement).
+  * [Understanding MDM Certificates](https://micromdm.io/blog/certificates/) (and how MDM works).
+  * [The business side of MDM - Do you know your DUNS Number?](https://micromdm.io/blog/accounts/).
+  * [Demystifying MDM: open source endeavors to manage Macs](https://www.youtube.com/watch?v=6DBGIDcBKFw).
+  * [Getting MicroMDM working and working with MicroMDM](https://www.youtube.com/watch?v=WGKT-PyHz6I).
+* [Mac Admins Slack](https://www.macadmins.org/slack).
