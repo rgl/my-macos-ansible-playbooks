@@ -16,6 +16,13 @@
       when: not homebrew_check.stat.exists
       changed_when: not homebrew_check.stat.exists
 
+- name: Disable brew analytics
+  ansible.builtin.command:
+    cmd: /bin/bash /dev/stdin
+    stdin: "{{ lookup('file', 'disable-brew-analytics.sh') }}"
+  register: homebrew_result
+  changed_when: "'ANSIBLE CHANGED NO' not in homebrew_result.stdout_lines"
+
 - name: Upgrade homebrew
   community.general.homebrew:
     update_homebrew: true
