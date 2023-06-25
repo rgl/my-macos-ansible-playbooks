@@ -122,3 +122,11 @@ You must manually allow the following applications to have the following permiss
 For requesting those permissions, you have to keep executing the playbook, until it reports no changes.
 
 While executing the playbook, you have to manually grant the asked permissions at the macOS desktop.
+
+# Virtualized macOS
+
+* [Tart](https://github.com/cirruslabs/tart).
+* [UTM](https://github.com/utmapp/UTM).
+* [Harvey's Virtual Environment](https://hsve.org/).
+  * [Proxmox 1-Click Templates](https://hsve.org/hackeasyway/).
+  * [How to enable pci (gpu-usb-audio) passthrough](https://hsve.org/passthrough/).
