@@ -8,6 +8,11 @@
   register: system_result
   changed_when: "'ANSIBLE CHANGED NO' not in system_result.stdout_lines"
 
+- name: Set the computer time zone
+  become: true
+  community.general.timezone:
+    name: "{{ system_time_zone }}"
+
 - name: Disable the computer sleep
   become: true
   args:
