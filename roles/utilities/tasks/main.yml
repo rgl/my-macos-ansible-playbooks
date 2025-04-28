@@ -12,3 +12,8 @@
 - name: Install jq
   community.general.homebrew:
     name: jq
+
+# see https://formulae.brew.sh/formula/yq
+- name: Install yq
+  community.general.homebrew:
+    name: yq
