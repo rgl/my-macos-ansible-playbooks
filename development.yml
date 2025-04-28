@@ -6,5 +6,6 @@
   roles:
     - system
     - homebrew
+    - bash
     - zsh
     - desktop

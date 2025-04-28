@@ -1,0 +1,31 @@
+# see https://formulae.brew.sh/formula/bash
+- name: Install bash
+  community.general.homebrew:
+    name: bash
+
+- name: Add bash to /etc/shells
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/shells
+    line: /usr/local/bin/bash
+
+- name: Install local bashrc
+  ansible.builtin.copy:
+    src: bashrc
+    dest: /usr/local/etc/bashrc
+    mode: 0444
+
+- name: Source local bashrc from /etc/bashrc
+  become: true
+  ansible.builtin.blockinfile:
+    path: /etc/bashrc
+    block: |
+      [ -r /usr/local/etc/bashrc ] && . /usr/local/etc/bashrc
+    insertafter: EOF
+
+- name: Install libreadline inputrc
+  become: true
+  ansible.builtin.copy:
+    src: inputrc
+    dest: /etc/inputrc
+    mode: 0444
