@@ -1,0 +1,4 @@
+# see https://formulae.brew.sh/formula/htop
+- name: Install htop
+  community.general.homebrew:
+    name: htop
