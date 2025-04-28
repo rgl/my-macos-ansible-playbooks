@@ -22,3 +22,8 @@
 - name: Install xq
   community.general.homebrew:
     name: xq
+
+# see https://formulae.brew.sh/formula/wget
+- name: Install wget
+  community.general.homebrew:
+    name: wget
