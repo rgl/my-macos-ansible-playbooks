@@ -81,6 +81,10 @@
     - streetsidesoftware.code-spell-checker
     # see https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese
     - streetsidesoftware.code-spell-checker-portuguese
+    # Deno support.
+    # see https://github.com/denoland/vscode_deno
+    # see https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno
+    - denoland.vscode-deno
     # PDF Viewer.
     # see https://github.com/tomoki1207/vscode-pdfviewer
     # see https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf

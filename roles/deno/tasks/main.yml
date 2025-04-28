@@ -1,0 +1,4 @@
+# see https://formulae.brew.sh/formula/deno
+- name: Install deno
+  community.general.homebrew:
+    name: deno
