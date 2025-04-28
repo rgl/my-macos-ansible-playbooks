@@ -29,3 +29,9 @@
     src: inputrc
     dest: /etc/inputrc
     mode: 0444
+
+- name: Set bash as the user default shell
+  become: true
+  ansible.builtin.user:
+    name: '{{ ansible_user }}'
+    shell: /usr/local/bin/bash
