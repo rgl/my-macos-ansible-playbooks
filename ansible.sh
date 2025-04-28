@@ -2,13 +2,14 @@
 set -euo pipefail
 
 command="$(basename "$0" .sh)"
-tag="ansible-$(basename "$PWD")"
 
 # build the ansible image.
-DOCKER_BUILDKIT=1 docker build -f Dockerfile.ansible -t "$tag" .
+install -d tmp
+DOCKER_BUILDKIT=1 docker build -f Dockerfile.ansible --iidfile tmp/ansible-iid.txt .
+ansible_iid="$(cat tmp/ansible-iid.txt)"
 
 # show information about the execution environment.
-docker run --rm -i "$tag" bash <<'EOF'
+docker run --rm -i "$ansible_iid" bash <<'EOF'
 exec 2>&1
 set -euxo pipefail
 cat /etc/os-release
@@ -20,15 +21,16 @@ EOF
 # execute command (e.g. ansible-playbook).
 # NB the GITHUB_ prefixed environment variables are used to trigger ansible-lint
 #    to annotate the GitHub Actions Workflow with the linting violations.
-#    see https://github.com/ansible/ansible-lint/blob/v6.16.0/src/ansiblelint/app.py#L89
-#    see https://ansible-lint.readthedocs.io/usage/#ci-cd
+#    see https://github.com/ansible/ansible-lint/blob/v25.2.1/src/ansiblelint/app.py#L106-L111
+#    see https://ansible-lint.readthedocs.io/en/latest/usage/#ci-cd
 exec docker run \
     --rm \
     --net=host \
-    -v "$HOME/.ssh:/root/.ssh:ro" \
+    -v "$HOME/.ssh/id_rsa:/root/.ssh/id_rsa:ro" \
+    -v "$HOME/.ssh/id_rsa.pub:/root/.ssh/id_rsa.pub:ro" \
     -v "$PWD:/project:ro" \
     -e GITHUB_ACTIONS \
     -e GITHUB_WORKFLOW \
-    "$tag" \
+    "$ansible_iid" \
     "$command" \
     "$@"

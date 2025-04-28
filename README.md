@@ -62,6 +62,10 @@ export GITHUB_COM_TOKEN='YOUR_GITHUB_PERSONAL_TOKEN'
 
 # Initial Preparation
 
+Install macOS Sequoia 15.x.
+
+**NB** You might have to use [OpenCore-Legacy-Patcher](https://dortania.github.io/OpenCore-Legacy-Patcher/) to install macOS in a older Mac.
+
 Create an account named `admin` with administrative privileges.
 
 Login as the `admin` user in the macOS desktop.
@@ -129,9 +133,7 @@ While executing the playbook, you have to manually grant the asked permissions a
 
 * [Tart](https://github.com/cirruslabs/tart).
 * [UTM](https://github.com/utmapp/UTM).
-* [Harvey's Virtual Environment](https://hsve.org/).
-  * [Proxmox 1-Click Templates](https://hsve.org/hackeasyway/).
-  * [How to enable pci (gpu-usb-audio) passthrough](https://hsve.org/passthrough/).
+* [OSX-PROXMOX](https://github.com/luchina-gabriel/OSX-PROXMOX).
 
 # Alternatives
 

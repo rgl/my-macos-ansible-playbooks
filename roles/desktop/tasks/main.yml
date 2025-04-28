@@ -6,6 +6,9 @@
 - name: Set Firefox as the default browser
   block:
     # see https://formulae.brew.sh/formula/defbro
+    - name: Tap jwbargsten/misc
+      community.general.homebrew_tap:
+        name: jwbargsten/misc
     - name: Install defbro
       community.general.homebrew:
         name: jwbargsten/misc/defbro
