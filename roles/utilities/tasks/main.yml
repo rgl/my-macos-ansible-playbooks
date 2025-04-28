@@ -2,3 +2,8 @@
 - name: Install htop
   community.general.homebrew:
     name: htop
+
+# see https://formulae.brew.sh/formula/sevenzip
+- name: Install sevenzip
+  community.general.homebrew:
+    name: sevenzip
