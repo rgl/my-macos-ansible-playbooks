@@ -12,4 +12,5 @@
     - utilities
     - go
     - deno
+    - docker
     - desktop

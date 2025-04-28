@@ -1,0 +1,9 @@
+# see https://formulae.brew.sh/formula/colima
+- name: Install colima
+  community.general.homebrew:
+    name: colima
+
+# see https://formulae.brew.sh/formula/docker
+- name: Install docker
+  community.general.homebrew:
+    name: docker
