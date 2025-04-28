@@ -27,3 +27,8 @@
 - name: Install wget
   community.general.homebrew:
     name: wget
+
+# see https://formulae.brew.sh/formula/xorriso
+- name: Install xorriso
+  community.general.homebrew:
+    name: xorriso
