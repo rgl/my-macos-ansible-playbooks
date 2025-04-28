@@ -1,0 +1,13 @@
+- name: Install git
+  become: true
+  block:
+    - name: Install gitconfig
+      ansible.builtin.copy:
+        src: gitconfig
+        dest: /etc/gitconfig
+        mode: 0444
+    - name: Create gitconfig.d directory
+      ansible.builtin.file:
+        name: /etc/gitconfig.d
+        state: directory
+        mode: 0755
