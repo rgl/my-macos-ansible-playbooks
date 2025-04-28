@@ -7,3 +7,8 @@
 - name: Install sevenzip
   community.general.homebrew:
     name: sevenzip
+
+# see https://formulae.brew.sh/formula/jq
+- name: Install jq
+  community.general.homebrew:
+    name: jq
