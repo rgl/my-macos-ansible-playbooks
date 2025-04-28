@@ -51,6 +51,10 @@
     # see https://github.com/DotJoshJohnson/vscode-xml
     # see https://marketplace.visualstudio.com/items?itemName=dotjoshjohnson.xml
     - dotjoshjohnson.xml
+    # Go language.
+    # see https://github.com/golang/vscode-go
+    # see https://marketplace.visualstudio.com/items?itemName=golang.Go
+    - golang.go
     # Python language.
     # NB this depends on the pylance extension (which includes pyright).
     # NB this depends on the python debugger extension.

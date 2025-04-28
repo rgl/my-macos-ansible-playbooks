@@ -1,0 +1,4 @@
+# see https://formulae.brew.sh/formula/go
+- name: Install go
+  community.general.homebrew:
+    name: go
